@@ -5,6 +5,13 @@ public class UnoDeck {
     get;
   }
 
+  public int Count => Cards.Count;
+
+  /// <summary>
+  /// Default constructor
+  /// Generates a black deck and shuffles it a few times
+  /// Use this in most cases
+  /// </summary>
   public UnoDeck() {
     Cards = new Queue<UnoCard>();
 
@@ -13,6 +20,20 @@ public class UnoDeck {
     Shuffle();
     Shuffle();
     Shuffle();
+  }
+
+  /// <summary>
+  /// Constructor that allows for a deck override
+  /// Use this for restoring a specific deck state
+  /// </summary>
+  /// <param name="cards">Deck override</param>
+  public UnoDeck(List<UnoCard> cards) {
+    Cards = new Queue<UnoCard>();
+
+    while (cards.Count > 0) {
+      Cards.Enqueue(cards[0]);
+      cards.RemoveAt(0);
+    }
   }
 
   public bool DrawCard(out UnoCard? card) {
@@ -24,6 +45,11 @@ public class UnoDeck {
 
     card = Cards.Dequeue();
     return true;
+  }
+
+  public override string ToString() {
+    return Cards.Select((UnoCard card) => card.ToString())
+                .Aggregate("cards:", (string accumulator, string value) => $"{accumulator}\n{value}");
   }
 
   private void GenerateDeck() {

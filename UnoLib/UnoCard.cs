@@ -10,6 +10,6 @@ public readonly struct UnoCard {
   }
 
   public override readonly string ToString() {
-    return $"{Enum.GetName(typeof(Color), Color)}:{Enum.GetName(typeof(Value), Value)}";
+    return $"{Enum.GetName(typeof(Color), Color)} - {Enum.GetName(typeof(Value), Value)}";
   }
 }
