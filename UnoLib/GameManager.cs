@@ -26,7 +26,7 @@ public class GameManager {
     if (players.Count < 10) {
       players.Add(player);
       return true;
-    }else{
+    } else {
       return false;
     }
   }
@@ -45,5 +45,7 @@ public class GameManager {
 
     // turn over the first card
     showingCard = deck.DrawCard();
+
+    isGameStarted = true;
   }
 }
