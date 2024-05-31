@@ -5,6 +5,8 @@ public class PlayerData {
   public int id;
   public List<UnoCard> cards;
 
+  public int Count => cards.Count;
+
   public PlayerData(string name, int id) {
     this.name = name;
     this.id = id;
@@ -17,6 +19,6 @@ public class PlayerData {
 
   public override string ToString() {
     return cards.Select((UnoCard card) => card.ToString())
-                .Aggregate($"{name} ({id}) cards:\n", (string accumulator, string value) => $"{accumulator}\n{value}");
+                .Aggregate($"{name} ({id}) cards:", (string accumulator, string value) => $"{accumulator}\n{value}");
   }
 }
