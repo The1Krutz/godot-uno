@@ -36,10 +36,24 @@ public class UnoDeck {
     }
   }
 
-  public bool DrawCard(out UnoCard? card) {
+  /// <summary>
+  /// Draw a card and return it. Only call this if the deck is guaranteed to have cards in it at this point (ie: dealing at the start of the game)
+  /// </summary>
+  public UnoCard DrawCard() {
     if (Cards.Count == 0) {
-      // Deck is empty. Do nothing with the out param, and return false.
-      card = null;
+      throw new Exception("Deck is empty!");
+    }
+
+    return Cards.Dequeue();
+  }
+
+  /// <summary>
+  /// Draw a card and maybe return it. This is the safe version to call during gameplay where the deck could possibly be empty.
+  /// </summary>
+  public bool DrawCard(out UnoCard card) {
+    if (Cards.Count == 0) {
+      // Deck is empty. Default card will not be used, and return false.
+      card = new UnoCard();
       return false;
     }
 

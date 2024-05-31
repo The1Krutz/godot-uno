@@ -1,13 +1,13 @@
 namespace UnoLib;
 
-public class PlayerData {
+public class Player {
   public string name;
   public int id;
   public List<UnoCard> cards;
 
   public int Count => cards.Count;
 
-  public PlayerData(string name, int id) {
+  public Player(string name, int id) {
     this.name = name;
     this.id = id;
     cards = new();

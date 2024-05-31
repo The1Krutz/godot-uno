@@ -3,7 +3,7 @@ namespace UnoLib.Test;
 public class PlayerDataTests {
   [Fact]
   public void PlayerCanBeGivenCard() {
-    PlayerData player = new("Jim", 2);
+    Player player = new("Jim", 2);
     string expected = "Jim (2) cards:";
 
     Assert.Equal(0, player.Count);
