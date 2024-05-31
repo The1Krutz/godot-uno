@@ -16,10 +16,14 @@ Planning to use this as a way to learn how to build UI in Godot, since a card ga
 
 The Godot project with the actual game in it
 
+### UnoGame.Test
+
+Tests for the Godot project if I can get a unit testing framework to play nice
+
 ### UnoLib
 
 Helper classes and data models that support Uno but are agnostic to Godot
 
-### UnoTest
+### UnoLib.Test
 
-Tests for the helper stuff, and possibly the actual game if I can get a Godot unit testing framework to play nice
+Tests for the helpers

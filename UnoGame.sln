@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoGame", "UnoGame\UnoGame.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoLib", "UnoLib\UnoLib.csproj", "{32E0C75A-EBB3-4CFC-AF11-05821C77F87C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoTest", "UnoTest\UnoTest.csproj", "{D15523F3-F9CE-42D5-9E82-114122897969}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoLib.Test", "UnoLib.Test\UnoLib.Test.csproj", "{200C2717-0354-43C3-95D6-497D0041EC29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,5 +31,11 @@ Global
 		{D15523F3-F9CE-42D5-9E82-114122897969}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
 		{D15523F3-F9CE-42D5-9E82-114122897969}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
 		{D15523F3-F9CE-42D5-9E82-114122897969}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
+		{200C2717-0354-43C3-95D6-497D0041EC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200C2717-0354-43C3-95D6-497D0041EC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{200C2717-0354-43C3-95D6-497D0041EC29}.ExportDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{200C2717-0354-43C3-95D6-497D0041EC29}.ExportDebug|Any CPU.Build.0 = Debug|Any CPU
+		{200C2717-0354-43C3-95D6-497D0041EC29}.ExportRelease|Any CPU.ActiveCfg = Debug|Any CPU
+		{200C2717-0354-43C3-95D6-497D0041EC29}.ExportRelease|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
