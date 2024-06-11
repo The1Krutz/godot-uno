@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqlhv2kbty87f"]
+
+[ext_resource type="Script" path="res://UI/TitleMenu.cs" id="1_85l03"]
+[ext_resource type="Script" path="res://UI/MenusContainer.cs" id="1_vjy43"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="MenusContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_vjy43")
+metadata/_edit_lock_ = true
+
+[node name="TitleMenu" type="VBoxContainer" parent="MenusContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+script = ExtResource("1_85l03")
+
+[node name="Main Title" type="Label" parent="MenusContainer/TitleMenu"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Godot Uno"
+horizontal_alignment = 1
+
+[node name="SetupGame" type="Button" parent="MenusContainer/TitleMenu"]
+layout_mode = 2
+text = "Start Game
+"
+
+[node name="Options" type="Button" parent="MenusContainer/TitleMenu"]
+layout_mode = 2
+text = "Options
+"
+
+[node name="HSeparator" type="HSeparator" parent="MenusContainer/TitleMenu"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="MenusContainer/TitleMenu"]
+layout_mode = 2
+text = "Exit"
+
+[node name="StartMenu" type="VBoxContainer" parent="MenusContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="StartTitle" type="Label" parent="MenusContainer/StartMenu"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Game Options"
+horizontal_alignment = 1
+
+[node name="GameOptionsContainer" type="GridContainer" parent="MenusContainer/StartMenu"]
+layout_mode = 2
+columns = 2
+
+[node name="PlayerCountLabel" type="Label" parent="MenusContainer/StartMenu/GameOptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Players: 2"
+
+[node name="PlayerCountSlider" type="HSlider" parent="MenusContainer/StartMenu/GameOptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 2.0
+max_value = 8.0
+value = 2.0
+
+[node name="HSeparator" type="HSeparator" parent="MenusContainer/StartMenu"]
+layout_mode = 2
+
+[node name="GoBack" type="Button" parent="MenusContainer/StartMenu"]
+layout_mode = 2
+text = "Back to main menu
+"
+
+[node name="StartGame" type="Button" parent="MenusContainer/StartMenu"]
+layout_mode = 2
+text = "Start game!"
+
+[connection signal="SwitchMenu" from="MenusContainer/TitleMenu" to="MenusContainer" method="OnSwitchMenu"]
+[connection signal="pressed" from="MenusContainer/TitleMenu/SetupGame" to="MenusContainer/TitleMenu" method="OnStartGamePressed"]
+[connection signal="pressed" from="MenusContainer/TitleMenu/Options" to="MenusContainer/TitleMenu" method="OnOptionsPressed"]
+[connection signal="pressed" from="MenusContainer/TitleMenu/Exit" to="MenusContainer/TitleMenu" method="OnExitPressed"]
