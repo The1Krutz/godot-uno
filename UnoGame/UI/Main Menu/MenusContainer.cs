@@ -15,10 +15,10 @@ public partial class MenusContainer : CenterContainer {
   // Backing Fields
 
   // Private Fields
-  private CanvasItem TitleMenu;
-  private CanvasItem StartMenu;
-  private Dictionary<Menus, CanvasItem> MenuMap;
-  private CanvasItem CurrentMenu;
+  private CanvasItem titleMenu;
+  private CanvasItem startMenu;
+  private Dictionary<Menus, CanvasItem> menuMap;
+  private CanvasItem currentMenu;
 
   // Constructor
 
@@ -26,34 +26,39 @@ public partial class MenusContainer : CenterContainer {
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready() {
-    TitleMenu = GetNode<CanvasItem>("TitleMenu");
-    StartMenu = GetNode<CanvasItem>("StartMenu");
+    titleMenu = GetNode<CanvasItem>("TitleMenu");
+    startMenu = GetNode<CanvasItem>("StartMenu");
 
-    CurrentMenu = TitleMenu;
+    currentMenu = titleMenu;
 
-    MenuMap = new(){
-      { Menus.Title, TitleMenu },
-      { Menus.Start, StartMenu }
+    menuMap = new(){
+      { Menus.Title, titleMenu },
+      { Menus.Start, startMenu }
     };
 
-    GD.Print($"got menus: {TitleMenu}, {StartMenu}");
+    SetDefaultMenuVisibility();
   }
 
   // Public Functions
   public void OnSwitchMenu(Menus targetMenu) {
     GD.Print($"switching to new menu {targetMenu}");
 
-    CanvasItem newMenu = MenuMap[targetMenu];
+    CanvasItem newMenu = menuMap[targetMenu];
 
-    CurrentMenu.Visible = false;
+    currentMenu.Visible = false;
     newMenu.Visible = true;
+
+    currentMenu = newMenu;
   }
 
   // Private Functions
+  private void SetDefaultMenuVisibility() {
+    titleMenu.Visible = true;
+    startMenu.Visible = false;
+  }
 }
 
 public enum Menus {
   Title,
-  Start,
-  Options
+  Start
 }

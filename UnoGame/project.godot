@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UnoGame"
-run/main_scene="res://UI/mainMenu.tscn"
+run/main_scene="res://UI/Main Menu/mainMenu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -24,3 +24,7 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="UnoGame"
+
+[gui]
+
+theme/custom="res://UI/defaultTheme.tres"

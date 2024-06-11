@@ -1,0 +1,5 @@
+[gd_resource type="Theme" format=3 uid="uid://cfkob74p7l0q8"]
+
+[resource]
+default_font_size = 32
+HeaderHuge/font_sizes/font_size = 48

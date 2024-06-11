@@ -24,25 +24,14 @@ public partial class TitleMenu : VBoxContainer {
 
   // Called when the node enters the scene tree for the first time.
   public override void _Ready() {
-
   }
 
   // Public Functions
   public void OnStartGamePressed() {
-    GD.Print("start game pressed!");
-
     EmitSignal(SignalName.SwitchMenu, (int)Menus.Start);
   }
 
-  public void OnOptionsPressed() {
-    GD.Print("options pressed!");
-
-    EmitSignal(SignalName.SwitchMenu, (int)Menus.Options);
-  }
-
   public void OnExitPressed() {
-    GD.Print("exit pressed!");
-
     GetTree().Root.PropagateNotification((int)NotificationWMCloseRequest);
     GetTree().Quit();
   }
