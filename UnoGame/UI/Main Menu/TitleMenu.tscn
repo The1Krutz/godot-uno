@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://8it34ixtkpbl"]
+
+[ext_resource type="Script" path="res://UI/Main Menu/TitleMenu.cs" id="1_1l5p1"]
+
+[node name="TitleMenu" type="VBoxContainer"]
+theme_override_constants/separation = 16
+script = ExtResource("1_1l5p1")
+
+[node name="Main Title" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"HeaderHuge"
+text = "Godot Uno"
+horizontal_alignment = 1
+
+[node name="SetupGame" type="Button" parent="."]
+layout_mode = 2
+text = "Start Game
+"
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="."]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="pressed" from="SetupGame" to="." method="OnStartGamePressed"]
+[connection signal="pressed" from="Exit" to="." method="OnExitPressed"]

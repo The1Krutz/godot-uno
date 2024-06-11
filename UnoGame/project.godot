@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UnoGame"
-run/main_scene="res://UI/Main Menu/mainMenu.tscn"
+run/main_scene="res://UI/Main Menu/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

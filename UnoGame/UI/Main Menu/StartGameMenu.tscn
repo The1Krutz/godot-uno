@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://djb0de61a2qnq"]
+
+[ext_resource type="Script" path="res://UI/Main Menu/StartGameMenu.cs" id="1_m1xv4"]
+
+[node name="StartMenu" type="VBoxContainer"]
+theme_override_constants/separation = 16
+script = ExtResource("1_m1xv4")
+
+[node name="StartTitle" type="Label" parent="."]
+layout_mode = 2
+theme_type_variation = &"HeaderHuge"
+text = "Game Options"
+horizontal_alignment = 1
+
+[node name="GameOptions" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 2
+
+[node name="PlayerCountLabel" type="Label" parent="GameOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Players: 2"
+
+[node name="PlayerCountSlider" type="HSlider" parent="GameOptions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 2.0
+max_value = 8.0
+value = 2.0
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="GoBack" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Back"
+
+[node name="Spacer" type="Control" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="StartGame" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start"
+
+[connection signal="value_changed" from="GameOptions/PlayerCountSlider" to="." method="OnPlayerCountChanged"]
+[connection signal="pressed" from="Buttons/GoBack" to="." method="OnBackToTitlePressed"]

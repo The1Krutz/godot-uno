@@ -5,7 +5,7 @@ namespace UnoGame;
 /// <summary>
 /// Handles the Start Game menus. Also manages the starting conditions for the game since this is where they're all set
 /// </summary>
-public partial class StartMenu : VBoxContainer {
+public partial class StartGameMenu : VBoxContainer {
   // Signals
   [Signal]
   public delegate void SwitchMenuEventHandler(Menus targetMenu);
