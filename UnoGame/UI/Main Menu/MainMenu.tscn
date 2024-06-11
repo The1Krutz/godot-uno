@@ -4,9 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://8it34ixtkpbl" path="res://UI/Main Menu/TitleMenu.tscn" id="2_waoko"]
 [ext_resource type="PackedScene" uid="uid://djb0de61a2qnq" path="res://UI/Main Menu/StartGameMenu.tscn" id="3_qf6kf"]
 
-[node name="MenusContainer" type="CenterContainer"]
-offset_right = 1920.0
+[node name="MenusContainer" type="MarginContainer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -165.5
+offset_top = 200.0
+offset_right = 165.5
 offset_bottom = 1080.0
+grow_horizontal = 2
 script = ExtResource("1_4vgee")
 metadata/_edit_lock_ = true
 
