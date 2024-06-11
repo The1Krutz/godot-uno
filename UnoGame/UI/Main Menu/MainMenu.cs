@@ -5,7 +5,7 @@ namespace UnoGame;
 /// <summary>
 /// Manages the movement between menu screens
 /// </summary>
-public partial class MenusContainer : MarginContainer {
+public partial class MainMenu : MarginContainer {
   // Signals
 
   // Exports
