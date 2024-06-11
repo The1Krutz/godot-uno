@@ -1,12 +1,17 @@
 namespace UnoLib;
 
 public class UnoDeck {
+  // Public Fields
+  public int Count => Cards.Count;
+
+  // Backing Fields
+
+  // Private Fields
   private Queue<UnoCard> Cards {
     get;
   }
 
-  public int Count => Cards.Count;
-
+  // Constructor
   /// <summary>
   /// Default constructor
   /// Generates a black deck and shuffles it a few times
@@ -36,6 +41,7 @@ public class UnoDeck {
     }
   }
 
+  // Public Functions
   /// <summary>
   /// Draw a card and return it. Only call this if the deck is guaranteed to have cards in it at this point (ie: dealing at the start of the game)
   /// </summary>
@@ -66,6 +72,7 @@ public class UnoDeck {
                 .Aggregate("cards:", (string accumulator, string value) => $"{accumulator}\n{value}");
   }
 
+  // Private Functions
   private void GenerateDeck() {
     Cards.Clear();
 

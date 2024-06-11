@@ -1,6 +1,7 @@
 namespace UnoLib;
 
 public class GameManager {
+  // Public Fields
   public List<Player> players;
   public int currentPlayerIndex;
   public UnoDeck deck;
@@ -8,8 +9,12 @@ public class GameManager {
   public List<UnoMove> moveHistory;
   public bool isGameStarted;
 
-  private Random rng;
+  // Backing Fields
 
+  // Private Fields
+  private readonly Random rng;
+
+  // Constructor
   public GameManager() {
     players = new();
     deck = new UnoDeck();
@@ -19,6 +24,7 @@ public class GameManager {
     rng = new Random();
   }
 
+  // Public Functions
   /// <summary>
   /// Add a player, if there's room in the game. Otherwise do nothing
   /// </summary>
@@ -48,4 +54,6 @@ public class GameManager {
 
     isGameStarted = true;
   }
+
+  // Private Functions
 }
