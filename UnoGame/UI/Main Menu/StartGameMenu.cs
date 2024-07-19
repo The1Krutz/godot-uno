@@ -9,6 +9,8 @@ public partial class StartGameMenu : VBoxContainer {
   // Signals
   [Signal]
   public delegate void SwitchMenuEventHandler(Menus targetMenu);
+  [Signal]
+  public delegate void StartGameEventHandler(int playerCount);
 
   // Exports
 
@@ -32,6 +34,10 @@ public partial class StartGameMenu : VBoxContainer {
   // Public Functions
   public void OnBackToTitlePressed() {
     EmitSignal(SignalName.SwitchMenu, (int)Menus.Title);
+  }
+
+  public void OnStartGamePressed() {
+    EmitSignal(SignalName.StartGame, playerCount);
   }
 
   public void OnPlayerCountChanged(float value) {

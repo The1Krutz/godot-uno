@@ -52,3 +52,4 @@ text = "Start"
 
 [connection signal="value_changed" from="GameOptions/PlayerCountSlider" to="." method="OnPlayerCountChanged"]
 [connection signal="pressed" from="Buttons/GoBack" to="." method="OnBackToTitlePressed"]
+[connection signal="pressed" from="Buttons/StartGame" to="." method="OnStartGamePressed"]

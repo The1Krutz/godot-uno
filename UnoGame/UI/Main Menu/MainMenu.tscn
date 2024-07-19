@@ -23,4 +23,5 @@ layout_mode = 2
 layout_mode = 2
 
 [connection signal="SwitchMenu" from="TitleMenu" to="." method="OnSwitchMenu"]
+[connection signal="StartGame" from="StartMenu" to="." method="OnStartGamePressed"]
 [connection signal="SwitchMenu" from="StartMenu" to="." method="OnSwitchMenu"]

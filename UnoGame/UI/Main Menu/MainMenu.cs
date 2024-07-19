@@ -7,6 +7,8 @@ namespace UnoGame;
 /// </summary>
 public partial class MainMenu : MarginContainer {
   // Signals
+  [Signal]
+  public delegate void StartGameEventHandler(int playerCount);
 
   // Exports
 
@@ -49,6 +51,10 @@ public partial class MainMenu : MarginContainer {
     newMenu.Visible = true;
 
     currentMenu = newMenu;
+  }
+
+  public void OnStartGamePressed(int playerCount) {
+    EmitSignal(SignalName.StartGame, playerCount);
   }
 
   // Private Functions
